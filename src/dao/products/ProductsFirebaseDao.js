@@ -1,0 +1,9 @@
+import { config } from "dotenv";
+config({ path: process.ENV });
+import FirebaseContainer from "../../containers/FirebaseContainer.js";
+
+export default class ProductsFirebaseDao extends FirebaseContainer {
+  constructor(collection) {
+    super(process.env.FIREBASE_COLLECTION_PRODUCTS || collection);
+  }
+}
